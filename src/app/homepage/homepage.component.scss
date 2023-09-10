@@ -1,0 +1,628 @@
+ 
+.header {
+    background-image: url("../../assets/images/header.jpg");
+    background-color: rgba(0, 0, 0, .05);
+    background-blend-mode: darken;
+    background-size: cover;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+
+#hamburger-menu {
+    display: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    overflow: hidden;
+}
+.nav-background {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    position: fixed;
+    top: .75rem;
+    right: .75rem;
+    background-color: white;
+    z-index: 1000;
+    transition: transform .8s cubic-bezier(0.86, 0, 0.7, 1);
+}
+
+.nav-checkbox:checked ~ .nav-background {
+    transform: scale(45);
+}
+
+.nav  {
+    display: none;
+}
+
+.nav-checkbox:checked ~ .nav {
+    display: block;
+    opacity: 1;
+    width: 100%;
+}
+
+.nav-button {
+    background-color: white;
+    height: 3rem;
+    width: 3rem;
+    position: fixed;
+    top: .5rem;
+    right: .5rem;
+    border-radius: 50%;
+    z-index: 2000;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nav-button > * {
+    transform: scale(1.5);
+}
+
+.nav-checkbox {
+    display: none;
+}
+
+.nav {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1500;
+    opacity: 0;
+    width: 0;
+    transition: all .8s;
+}
+
+.nav-list {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    text-align: center;
+    width: 100%;
+}
+
+.nav-item {
+    margin: 2.5rem;
+    color: black;
+}
+
+.nav-link, .nav-link:link, .nav-link:visited {
+    display: inline-block;
+    font-size: 3rem;
+    font-weight: 300;
+    color: black;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-image: linear-gradient(120deg, transparent 0%, transparent 50%, white 50%);
+    background-size: 220%;
+    transition: all .4s;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+}
+
+
+.bar-menu {
+    position: sticky;
+    top: 0;
+    height: 5vh;
+    background-color: white;
+    text-transform: uppercase;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    font-weight: 200;
+}
+
+.bar-menu > .left {
+    width: 40%;
+    font-size: 1.5rem;
+}
+
+.bar-menu > .right {
+    width: 50%;
+    position: relative;
+    left: -100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bar-menu li {
+    list-style: none;
+    transition: all 2s;    
+}
+
+.bar-menu li:hover {
+    cursor: pointer;
+}
+
+.bar-menu > .right > li:hover {
+    color: #777;
+    border-bottom: 1px solid black;
+}
+
+#about-el {
+    display: flex;
+    justify-content: center;
+    cursor: default;
+    &:hover {
+        #about-header {
+            display: block;
+        }
+    }
+}
+
+#about-header{
+    display: none;
+    background-color: white;
+    padding: 1em;
+    position: absolute;
+    top: 1.2em;
+}
+#about-header > li {
+    padding: .5em;
+}
+#about-header li:hover {
+    color: #aaa;
+    cursor: pointer;
+}
+
+#logo {
+    font-size: 5rem;
+    margin-bottom: .5em;
+    font-weight: 200;
+}
+
+.header > .intro > h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.header > * {
+    margin: 2em;
+    display: flex;
+}
+
+.header > .intro {
+    flex-direction: column;
+}
+
+.bar-menu .active {
+    border-bottom: 1px solid black;
+}
+
+.page {
+    display: none;
+    animation: fadeOut linear 1s;
+}
+
+.active-page {
+    display: flex;
+    animation: fadeIn linear 1s;
+    min-height: 93.5vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.private-dining {
+    background-image: url('../../assets/images/private-dining.jpg');
+    min-height: 100vh;
+    background-size: contain;
+
+    .filter {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, .8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5em;
+        box-sizing: border-box;
+        .description {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            border: 3px solid black;
+            
+            h2 {
+                font-weight: 300;
+            }
+
+            p {
+                font-style: italic;
+                font-weight: 200;
+            }
+        }
+    }
+}
+
+.reservations {
+    background-image: url('../../assets/images/reservations.jpg');
+    background-size: cover;
+
+    .filter {
+        background-color: rgba(255, 255, 255, .8);
+        padding: 3em;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        width: 60vw;
+        position: relative;
+
+        mat-form-field {
+            margin: 1em;
+        }
+    
+        button {
+            position: absolute;
+            right: 1em;
+            bottom: 1em;
+            
+            &:hover {
+                background-color: #333;
+                color: white;
+            }
+        }
+        .active-form {
+            display: block;
+            animation: fadeIn 1s linear;
+        }
+
+        .disabled-form {
+            display: none;
+        }
+    }
+
+
+    #date {
+        position: relative; 
+        top: -8px;
+    }
+}
+
+.contact {
+    background-image: url('../../assets/images/contact.jpg');
+    height: 100vh;
+    background-size: contain;
+    text-transform: uppercase;
+
+    .filter {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, .8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5em;
+        box-sizing: border-box;
+        .description {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            border: 3px solid black;
+            
+            h2 {
+                font-weight: 300;
+                text-align: center;
+            }
+
+            h1 {
+                color: #676767;
+
+            }
+
+            p {
+                font-style: italic;
+                font-weight: 200;
+            }
+        }
+    }
+}
+
+.private-dining {
+    background-image: url('../../assets/images/private-dining.jpg');
+    height: 100vh;
+    background-size: contain;
+
+    .filter {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, .8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5em;
+        box-sizing: border-box;
+        .description {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            border: 3px solid black;
+            
+            h2 {
+                font-weight: 300;
+            }
+
+            p {
+                font-style: italic;
+                font-weight: 200;
+            }
+        }
+    }
+}
+
+.tradition {
+    background-image: url('../../assets/images/private-dining.jpg');
+    height: 100vh;
+    background-size: cover;
+
+    .filter {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, .8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5em;
+        box-sizing: border-box;
+        .left {
+            width: 50%;
+            padding: 3rem;
+
+            h1 {
+                text-transform: uppercase;
+                color: #767676;
+                font-size: 1.8rem;
+            }
+            p {
+                font-size: 1.2rem;
+                line-height: 1.5rem;
+            }
+        }
+        .right {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            img {
+                width: 300px;    
+            }
+
+            #chef_img {
+
+            }
+
+            #kitchen_img {
+
+            }
+        }
+        
+    }
+}
+
+.chef {
+background-image: url('../../assets/images/private-dining.jpg');
+min-height: 100vh;
+background-size: cover;
+
+.filter {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5em;
+    box-sizing: border-box;
+    .left {
+        width: 50%;
+        padding: 3rem;
+
+        h1 {
+            text-transform: uppercase;
+            color: #767676;
+            font-size: 1.8rem;
+        }
+        p {
+             font-size: 1.2rem;
+            line-height: 1.5rem;
+        }
+    }
+    .right {
+       width: 50%;
+        display: flex;
+         justify-content: center;
+        img {
+           width: 400px;    
+        }
+    }   
+    }
+}
+.press {
+    background-image: url('../../assets/images/private-dining.jpg');
+    height: 91vh;
+    min-height: 90vh;
+    background-size: contain;
+
+    .filter {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, .8);
+        display: flex;
+        justify-content: center;
+        padding: 5em;
+        box-sizing: border-box;
+        .description {
+            h1 {
+                text-transform: uppercase;
+            }
+            em {
+                align-self: flex-end;
+                position: relative;
+                right: 6em;
+            }
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+    }
+}
+
+.menu {
+    min-height: 100vh;
+    background-image: url('../../assets/images/lunch_bg.jpg');
+    background-size: cover;
+    .filter {
+        background-color: rgba(255, 255, 255, .8);
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 100%; 
+        .description {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            h2 {
+                margin-top: 3em;
+                font-size: 1.8rem;
+                color: #676767;
+                text-transform: uppercase;
+            }
+        }
+   }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@media(max-width: 700px) {
+    .private-dining {
+        .filter {
+            width: 100%;
+            padding: 2em;
+            .description {
+                padding: 2em;
+                box-sizing: border-box;
+            }
+        }
+    }
+
+    .bar-menu > .right {
+        display: none   ;
+    }
+    #hamburger-menu {
+        display: block;
+        position: absolute;
+        top: 0.7rem;
+        mat-icon {
+            transform: scale(2);
+        }
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+    .private-dining {
+        min-height: 50vh;
+        max-height: 90vh;
+    }
+
+    .reservations {
+        background-size: cover;
+        .filter {
+            width: 90vw;
+            padding: 1em;
+            .description {
+                .form mat-form-field {
+                    width: 200px;
+                }
+            }
+        }
+    }
+
+    .contact {
+        .filter {
+            padding: 2em;
+            .description {
+                padding: 1em;
+            }
+        }
+    }
+
+    .tradition, .chef {
+        min-height: 100vh;
+        height: 100%;
+        .filter {
+            flex-direction: column;
+            .left, .right {
+                padding: 0;
+                width: 90vw;
+            }
+
+            .right > img {
+                width: 150px;
+                margin: 3rem 0 2em;
+            }
+        }
+    }
+    .chef {
+        .filter {
+            .right > img {
+                width: 220px;
+                margin-bottom: 3rem;
+            }
+        }
+    }
+    
+    .press {
+        height: 100%;
+        background-size: cover;
+        .filter {
+            padding: .5em;
+        }
+        em {
+            left: 0;
+        }
+    }
+}
+ 
