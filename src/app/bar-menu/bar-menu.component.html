@@ -1,0 +1,19 @@
+<div class="bar-menu">
+    <div class="left">
+        <li (click)="activeClass(0); toggleMenu()">Camdon Deconick</li>
+    </div>
+    <div class="right">
+        <li id="about-el" (click)="toggleAbout()">
+            About
+            <div id="about-header" [ngClass]="showAbout ? 'show' : ''">
+                <li (click)="activeClass(5); toggleMenu()">Tradition</li>
+                <li (click)="activeClass(6); toggleMenu()">Chef</li>
+                <li (click)="activeClass(7); toggleMenu()">Press</li>
+            </div>
+        </li>
+        <li  (click)="activeClass(8); toggleMenu()" [ngClass]="activeLiEls[8] ? 'active' : ''">Menu</li>
+        <li (click)="activeClass(2); toggleMenu()" [ngClass]="activeLiEls[2] ? 'active' : ''">Private Dining</li>
+        <li (click)="activeClass(3); toggleMenu()" [ngClass]="activeLiEls[3] ? 'active' : ''">Reservation</li>
+        <li (click)="activeClass(4); toggleMenu()" [ngClass]="activeLiEls[4] ? 'active' : ''">Contact</li>
+    </div>
+</div>

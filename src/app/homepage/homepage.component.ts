@@ -15,10 +15,17 @@ export class HomepageComponent implements OnInit {
   hostsNumber = 1;
   submitRes = false;
   showAbout = false;
-  menuIsOpen = false;
 
   constructor() { }
 
+  toggleAbout() {
+    this.showAbout = !this.showAbout;
+  }
+
+  onActiveLiEls(value: any) {
+    this.activeLiEls = value; 
+    console.log(this.activeLiEls); 
+  } 
   scrollToElement($element: any): void {
     this.menuChecked = !this.menuChecked;
     setTimeout(() => {
@@ -41,13 +48,7 @@ export class HomepageComponent implements OnInit {
     this.submitRes = true;
   }
 
-  toggleMenu() {
-    this.menuIsOpen = !this.menuIsOpen;
-  }
-
-  toggleAbout() {
-    this.showAbout = !this.showAbout;
-  }
+  
 
   onChange(event: any): void {
     this.date = event.target.value;  

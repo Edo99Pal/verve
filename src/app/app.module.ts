@@ -15,13 +15,18 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { MenuComponent } from './menu/menu.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BarMenuComponent } from './bar-menu/bar-menu.component';
+import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     MenuComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    BarMenuComponent,
+    HamburgerMenuComponent,
   ],
   imports: [
     BrowserModule,
