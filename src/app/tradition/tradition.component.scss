@@ -1,0 +1,72 @@
+.page {
+    display: none;
+    animation: fadeOut linear 1s;
+}
+
+.active-page {
+    display: flex;
+    animation: fadeIn linear 1s;
+    min-height: 93.5vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.tradition {
+    background-image: url('../../assets/images/private-dining.jpg');
+    height: 100vh;
+    background-size: cover;
+
+    .filter {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, .8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5em;
+        box-sizing: border-box;
+        .left {
+            width: 50%;
+            padding: 3rem;
+
+            h1 {
+                text-transform: uppercase;
+                color: #767676;
+                font-size: 1.8rem;
+            }
+            p {
+                font-size: 1.2rem;
+                line-height: 1.5rem;
+            }
+        }
+        .right {
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            img {
+                width: 300px;    
+            }
+        }
+        
+    }
+}
+
+
+ @media(max-width: 700px) {
+    .tradition {
+        min-height: 100vh;
+        height: 100%;
+        .filter {
+            flex-direction: column;
+            .left, .right {
+                padding: 0;
+                width: 90vw;
+            }
+
+            .right > img {
+                width: 150px;
+                margin: 3rem 0 2em;
+            }
+        }
+    }    
+}

@@ -1,29 +1,3 @@
- 
-.header {
-    background-image: url("../../assets/images/header.jpg");
-    background-color: rgba(0, 0, 0, .05);
-    background-blend-mode: darken;
-    background-size: cover;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    flex-direction: column;
-    text-transform: uppercase;
-}
-
-.header > .intro > h1 {
-    font-size: 3rem;
-    text-align: center;
-}
-
-.header > * {
-    margin: 2em;
-    display: flex;
-}
-
-.header > .intro {
-    flex-direction: column;
-}
-
 .page {
     display: none;
     animation: fadeOut linear 1s;
@@ -39,7 +13,7 @@
 
 .private-dining {
     background-image: url('../../assets/images/private-dining.jpg');
-    min-height: 100vh;
+    height: 100vh;
     background-size: contain;
 
     .filter {
@@ -72,26 +46,17 @@
     }
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    
-    100% {
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0;
-    }
-}
-
 @media(max-width: 700px) {
+    .private-dining {
+        min-height: 50vh;
+        max-height: 90vh;
+        .filter {
+            width: 100%;
+            padding: 2em;
+            .description {
+                padding: 2em;
+                box-sizing: border-box;
+            }
+        }
+    }
 }
- 

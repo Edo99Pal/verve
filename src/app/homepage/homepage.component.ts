@@ -8,12 +8,6 @@ import { EventEmitter } from '@angular/core';
 export class HomepageComponent implements OnInit {
   activeLiEls = [true, false, false, false, false, false, false, false, false];
   menuChecked = false;
-  username = '';
-  today: Date = new Date();
-  date: Date = new Date();
-  hostsList = [ 1, 2, 3, 4, 5, 6];
-  hostsNumber = 1;
-  submitRes = false;
   showAbout = false;
 
   constructor() { }
@@ -42,17 +36,8 @@ export class HomepageComponent implements OnInit {
     for(let i = 0; i < this.activeLiEls.length; i++) {
       console.log(this.activeLiEls[i]);
     }
-  }
+  }  
 
-  onSubmitRes() {
-    this.submitRes = true;
-  }
-
-  
-
-  onChange(event: any): void {
-    this.date = event.target.value;  
-  }
 
   ngOnInit(): void {
   }

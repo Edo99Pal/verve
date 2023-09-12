@@ -1,0 +1,31 @@
+<div class="reservations" [ngClass]="active ? 'active-page' : 'page'">
+    <div class="filter">
+        <div class="description" [ngClass]="submitRes ? 'disabled-form' : 'active-form'">
+            <h2>Reservations.</h2>
+            <div class="form">
+                <mat-form-field>
+                    <mat-label>Reservation name</mat-label>
+                    <input matInput [(ngModel)]="username" required/>
+                </mat-form-field>
+                <mat-form-field id="date">
+                    <input matInput [matDatepicker]="picker" [(ngModel)]="date" (ngModelChange)="onChange($event)" [min]="today">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker [(ngModel)]="date" required></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label># Guests</mat-label>
+                    <mat-select [(ngModel)]="hostsNumber" required>
+                        <mat-option *ngFor="let n of hostsList" value="{{ n }}"> 
+                            {{ n }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <button mat-raised-button (click)="onSubmitRes()">Submit</button>
+        </div>
+        <div class="confirm"  [ngClass]="submitRes ? 'active-form' : 'disabled-form'">
+            <p>Thank you, {{ username }} for inviting {{ hostsNumber }} people for a dinner in our restaurant on {{ date  | date}}.</p>
+        </div>
+    </div>
+</div>

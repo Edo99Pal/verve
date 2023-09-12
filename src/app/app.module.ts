@@ -13,10 +13,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { MenuComponent } from './menu/menu.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BarMenuComponent } from './bar-menu/bar-menu.component';
 import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.component';
+import { PrivateDiningComponent } from './private-dining/private-dining.component';
+import { ReservationsComponent } from './reservations/reservations.component';
+import { ContactComponent } from './contact/contact.component';
+import { TraditionComponent } from './tradition/tradition.component';
+import { ChefComponent } from './chef/chef.component';
+import { PressComponent } from './press/press.component';
 
 
 @NgModule({
@@ -24,9 +29,14 @@ import { HamburgerMenuComponent } from './hamburger-menu/hamburger-menu.componen
     AppComponent,
     HomepageComponent,
     MenuComponent,
-    PageNotFoundComponent,
     BarMenuComponent,
     HamburgerMenuComponent,
+    PrivateDiningComponent,
+    ReservationsComponent,
+    ContactComponent,
+    TraditionComponent,
+    ChefComponent,
+    PressComponent,
   ],
   imports: [
     BrowserModule,

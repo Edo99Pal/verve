@@ -49,6 +49,10 @@
     }
 }
 
+.bar-menu .active {
+    border-bottom: 1px solid black;
+}
+
 #about-header{
     display: none;
     background-color: white;
