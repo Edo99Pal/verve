@@ -1,6 +1,7 @@
 {
   "name": "verve-restaurant",
   "version": "0.0.0",
+  "hoempage": "https://edo99pal.github.io/verve",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
